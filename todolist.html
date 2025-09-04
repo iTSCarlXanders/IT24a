@@ -14,17 +14,19 @@
     />
     <button onclick="addTask()">Add</button>
 
-    <scrpt>
+    <script>
  
     function addTask(){
             getTaskText();
         }
             
     function getTaskTest(){
-      var input = document.getElementById('taskInput');
-      console.log(taskInput.value);
+      const input = document.getElementById('taskInput');
+      const text = input.value.trim();
+      console.log("getTaskText() called: " + input.value);
+      return{text,input};
     }
-    </scrpt>
+    </script>
 
 
 </body>
