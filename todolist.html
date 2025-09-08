@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     
     <h1>TO DO LIST</h1>
     <input type = "text"
@@ -68,4 +69,30 @@ function addTaskItem(taskText){
  </script>
 
  </body>
+=======
+    <h1>To Do List</h1>
+    <input type="text"
+    id="tastInput"
+    placeholder="Add a task"
+
+    />
+    <button onclick="addTask()">Add</button>
+
+    <script>
+ 
+    function addTask(){
+            getTaskText();
+        }
+            
+    function getTaskTest(){
+      const input = document.getElementById('taskInput');
+      const text = input.value.trim();
+      console.log("getTaskText() called: " + input.value);
+      return{text,input};
+    }
+    </script>
+
+
+</body>
+>>>>>>> b9047267a854d54746e5c03f6d99994c3bbac392
 </html>
