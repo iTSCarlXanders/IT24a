@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT24A- Event Programming</title>
+    <title>IT24 - Event Driven Programming</title>
 </head>
 <body>
     <h1>Hello World</h1>
 
     <input type="text"
-    id="textbox"
-    placeholder="type something here..."
-    oninput="updateDisplay()";>
-
-    <h1 id="display text">Your text goes here</h1>
+           id="textbox"
+           placeholder="Type something here..."
+           oninput="updateDisplay()">
+    
+    <h1 id="displayText">Your text goes here</h1>
+    <h2 id="displayText2">Your text goes here</h2>
 
 </body>
 <script>
+
     function updateDisplay(){
         var textbox = document.getElementById('textbox');
-        var display = document.getElementById('displaytext');
-        var display = document.getElementById('displaytext2');
+        var displayText = document.getElementById('displayText');
+        var displayText2 = document.getElementById('displayText2');
         const d = new Date();
 
-        //displayText.textContent = textbox.value;
-        //displayText.textContent = textbox.value;
-        console.log(textbox.value + d + ""+window.location.hostname);
-
+        displayText.textContent = textbox.value;
+        displayText2.textContent = textbox.value;
+        console.log(textbox.value + d + " "+window.location.hostname);
     }
 
-</script>    
+</script>
 </html>
