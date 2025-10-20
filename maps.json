@@ -1,0 +1,18 @@
+[
+    {
+        "name":"ICS Laboratory 1",
+        "title":"You Are My Sunshine",
+        "description":"Lebronto",
+        "img":"https://www.bu.edu/files/2024/12/Screenshot-2024-12-13-at-12.42.40%E2%80%AFPM.png",
+        "lat":8.3593, 
+        "lng":124.8691
+    },
+    {
+        "name":"Northern Bukidnon State College Grounds",
+        "title":"Speed",
+        "description":"Ballon d'or",
+        "img":"https://media1.tenor.com/m/e6gf3Da-UW4AAAAC/ishowspeed-speed.gif",
+        "lat":8.3606, 
+        "lng":124.8683
+    }
+]
