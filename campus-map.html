@@ -41,7 +41,7 @@
 
     //Satellite
     const satellite = L.tileLayer(
-        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{x}/{y}',
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
         {attribution:'Tiles (c) Esri - Source: Esri, Maxar, Earthstar Geographics, GIS User Community'}
     );
 
@@ -49,7 +49,7 @@
     console.log("Base map tile layer loaded" + Date());
 
     const markerGroups ={};
-        
+
     fetch(mapDataUrl)
         .then(response => response.json())
         .then(data => {
@@ -69,10 +69,28 @@
 
                 markerGroups[type].addLayer(marker);
             });
-            //Add all groups to map initially
-            Object.values(markerGroups).forEach(group => group.addTo(map));
-        })
 
+         //Add all groups to map initially
+            Object.values(markerGroups).forEach(group => group.addTo(map));
+        
+         //Layer control
+            const baseMaps={
+                "OpenStreetMap":openStreetMap,
+                "Satellite": satellite
+            }
+
+            const overlayMaps={};
+
+        //Add marker groups to the map according to layer filter
+            Object.keys(markerGroups).forEach(type=>{
+                overlayMaps[type] = markerGroups[type];
+            });
+            
+         //Add all elements into the map
+            L.control.layers(baseMaps,overlayMaps,{collapsed:false}).addTo(map);
+        
+        })
+        .catch(err => console.error('Error loading JSON', err));
 }
 document.addEventListener("DOMContentLoaded",()=>{
     initMap('campus-map.json');
